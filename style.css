@@ -29,7 +29,7 @@ body{
   display: flex;
   align-items: center;
   
-  background: red;
+  background:var(--color-black);
 }
 .person-content{
   height: 100%;
@@ -48,8 +48,8 @@ body{
 
 .person-content div h1{
   color:transparent;
+  
   padding: 0px 4px;
-
   position: relative;
   width: fit-content;
 
@@ -68,23 +68,34 @@ body{
 }
 .person-content div h1:nth-child(3){
   animation: writte_text_name .5s ease forwards;
-  animation-delay: 3s;
+  animation-delay: 2.5s;
 }
 
 .person-content div h1 span{
-  position: absolute;
-  top: 0;
-  left: 0;
+ position: absolute;
+ top: 0;
+ left: 0;
 
-  width: 0px;
-  height: 100%;
-  background:var(--color-pink);
+ width: 0px;
+ height: 50px;
+ background:var(--color-pink);
+ 
+ animation: writte_text_box 1s ease;
+ animation-delay: .5s;
 
-  animation:  writte_text_box 1s ease;
+  
 }
 
 .person-content div h1:nth-child(1) span{
-  animation-delay: 5s;
+  animation-delay: 1s;
+}
+
+.person-content div h1:nth-child(2) span{
+  animation-delay: 2s;
+
+}
+  .person-content div h1:nth-child(3) span{
+  animation-delay: 3s;
 } 
 
 @keyframes writte_text {
@@ -103,14 +114,14 @@ body{
  
 @keyframes writte_text_box{
   50%{
-     width: 100%;
-     height: 0;
+    width: 100%;
+    left: 0;
   }
 
   100%{
     width: 0;
-    height: 100%;
-}
+    left: 100%;
+  }
 
 }
 
